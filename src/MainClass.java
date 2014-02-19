@@ -5,6 +5,7 @@ public class MainClass {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
+		
 		// Get names from input file, passed via command line
 		ArrayList<String> fileNames = new ArrayList<String>();
 		while ((sc.hasNextLine())) {
@@ -23,12 +24,12 @@ public class MainClass {
 		}
 
 		Phonetics x = new Phonetics(fileNames, inputNames);
+		
 		/*
-		 * //Un-comment if working in IDE and passing in files from console
-		 * System
-		 * .out.println("Please enter the full filepath of your name file");
-		 * String filename = sc.nextLine(); Phonetics x = new
-		 * Phonetics(filename);
+		  //Un-comment if working in IDE and passing in files from console
+		  System.out.println("Please enter the full filepath of your name file");
+		  String filename = sc.nextLine(); Phonetics x = new
+		  Phonetics(filename);
 		 */
 	}
 }
