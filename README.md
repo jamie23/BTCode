@@ -68,3 +68,42 @@ When removing repeated letters, I consider AAAA as 2 sets of doubles, so this wo
 1) When testing I wrote my code in eclipse, I wanted quick testing without having to switch to command line, so wrote the commented out lines of code found at the bottom of the main method. Uncommenting these lines and commenting out from line 10 to line 27 will allow the program to prompt you to enter a filepath+filename and use this to locate your name file. From here you can then input names and check the file for similar names. When finished simply hit enter when prompted for another name and it will end the program. 
 
 2) To use names with multiple letters in the command line you must put them in quotes, e.g. "van damme" so that it is recognised as one word for a parameter.
+
+###Tests:
+
+1) Tested with correct data:
+
+	1) Correct surname found in database:
+		Please enter a name: 
+		Smith
+		Smith: Smith, Smyth, Smythe, Smid
+
+	2) Correct surname not found in database:
+		Please enter a name: 
+		McDowell
+		McDowell: There is no name stored that matches the parsed name you input
+	
+2) Borderline data:
+
+	1) Testing odd characters e.g. ' in names and stored in database:
+		Please enter a name: 
+		O'Chew
+		O'Chew: O'Chew
+	
+	2) Testing odd characters e.g. ' in names and not store in database
+		Please enter a name: 
+		O'Mcdowell
+		O'Mcdowell: There is no name stored that matches the parsed name you input
+
+
+3) Erroneous data:
+
+	1) Non characters for surnames (Numbers):
+		Please enter a name: 
+		349305809483
+		349305809483: There is no name stored that matches the parsed name you input
+
+	2) Non characters for surnames (symbols):
+		Please enter a name: 
+		":{@()*$@
+		":{@()*$@: There is no name stored that matches the parsed name you input
