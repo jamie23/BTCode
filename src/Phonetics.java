@@ -23,7 +23,7 @@ public class Phonetics {
 	private HashMap<String, ArrayList<String>> mapNames = new HashMap<String, ArrayList<String>>();
 
 	/*
-	 * Overloaded method used when arguments/filename are passed in via command
+	 * Overloaded constructor used when arguments/filename are passed in via command
 	 * line in the terminal.
 	 */
 	public Phonetics(ArrayList<String> fileNames, ArrayList<String> inputNames) {
@@ -53,7 +53,7 @@ public class Phonetics {
 		String currentName = "";
 		String parsedName = "";
 
-		// Applies rules to all names in the file and adds them map
+		// Applies rules to all names in the file and adds them to the map
 		for (int i = 0; i < fileNames.size(); i++) {
 			currentName = fileNames.get(i);
 
@@ -67,7 +67,7 @@ public class Phonetics {
 
 	/*
 	 * Used with second constructor to test in an IDE by taking a name in via
-	 * the console until you are done and passing them to getSimilarNames method
+	 * the console and passing them to getSimilarNames method
 	 * to output any phonetically similar words.
 	 */
 	public void getNames() {
@@ -76,6 +76,7 @@ public class Phonetics {
 		while (sc.hasNextLine()) {
 			String name = sc.nextLine();
 			if (name.equals("")) {
+				//User is finished.
 				System.out.println("Exiting the program");
 				System.exit(1);
 			} else {
@@ -105,15 +106,15 @@ public class Phonetics {
 		}
 
 		name = name.substring(0, 1) + ltrsRemove;
-		name = equivLetters(name, equivalents);
 		name = removeDoubles(name);
+		name = equivLetters(name, equivalents);
 
 		return name;
 	}
 
 	/*
 	 * Replaces letters found in the word that are in a certain group with that
-	 * groups key letter.
+	 * groups special key letter.
 	 */
 	public String equivLetters(String name, String[][] letterList) {
 		for (int i = 0; i < letterList.length; i++) {
@@ -148,7 +149,7 @@ public class Phonetics {
 
 	/*
 	 * Takes the key and the name, adds them to the map either by a new entry or
-	 * by adding it to the end of the ArrayList of names
+	 * by adding it to the end of the ArrayList of names at that entry.
 	 */
 	public void insertIntoMap(String key, String name) {
 		if (mapNames.containsKey(key)) {
@@ -164,7 +165,7 @@ public class Phonetics {
 	}
 
 	/*
-	 * Pass in parsed name and check for key under that name Output any other
+	 * Pass in parsed name and check for key under that name, output any other
 	 * names under that key with the correct formatting Formatting - ',' after
 	 * every name except the last.
 	 */
