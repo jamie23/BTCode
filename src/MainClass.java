@@ -28,8 +28,8 @@ public class MainClass {
 		/*
 		  //Un-comment if working in IDE and passing in files from console
 		  System.out.println("Please enter the full filepath of your name file");
-		  String filename = sc.nextLine(); Phonetics x = new
-		  Phonetics(filename);
+		  String filename = sc.nextLine(); 
+		  Phonetics x = new Phonetics(filename);
 		 */
 	}
 }
