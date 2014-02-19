@@ -49,7 +49,7 @@ gives the output:
 #####To run via console:
 
 	1) Open in IDE.
-	2) Comment out the code from line 10 to line 27 (This code deals with getting arguments and file from the command line)
+	2) Comment out the code from line 10 to line 27 in MainClass (This code deals with getting arguments and file from the command line). Un-comment the code found at line 29 onwards.
 	3) Run the program, it will prompt you for a filepath.
 		The filepath is in the format:
 		/Users/jamie/Documents/workspace/BTCode/src/Surnames.txt
